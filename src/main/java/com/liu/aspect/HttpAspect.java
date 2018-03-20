@@ -16,7 +16,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
- *@Project Name:springboot 
+ * @Project Name:springboot
  * @author 刘佳瑞
  * @Package Name:com.liu.aspect
  * @date 2018年3月19日下午8:32:14
@@ -27,30 +27,34 @@ public class HttpAspect {
 	private static final Logger log = LoggerFactory.getLogger(HttpAspect.class);
 
 	@Pointcut("execution(public * com.liu.controller.*.*(..))")
-	public void log(){
+	public void log() {
 	}
+
 	@After("log()")
-	public void after(){
+	public void after() {
 		
 	}
+
 	@Before("log()")
-	public void before(JoinPoint joinPoint){
+	public void before(JoinPoint joinPoint) {
 		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 		HttpServletRequest request = attributes.getRequest();
-		//url
-		log.info("url={}",request.getRequestURL());
-		//method
-		log.info("method={}",request.getMethod());
-		//ip
-		log.info("ip={}",request.getRemoteAddr());
-		//类方法
-		log.info("class_method={}",joinPoint.getSignature().getDeclaringTypeName()+"."+joinPoint.getSignature().getName());
-		//args
-		log.info("args={}",joinPoint.getArgs());
+		// url
+		log.info("url={}", request.getRequestURL());
+		// method
+		log.info("method={}", request.getMethod());
+		// ip
+		log.info("ip={}", request.getRemoteAddr());
+		// 类方法
+		log.info("class_method={}",
+				joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+		// args
+		log.info("args={}", joinPoint.getArgs());
 	}
-	@AfterReturning(pointcut="log()",returning="object")
-	public void doAfterReturning(Object object){
-			log.info("response={}",object.toString());
+
+	@AfterReturning(pointcut = "log()", returning = "object")
+	public void doAfterReturning(Object object) {
+		log.info("response={}", object.toString());
 	}
-	
+
 }

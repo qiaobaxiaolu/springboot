@@ -1,2 +1,2 @@
 # springboot
-springboot mybatis  freemark thymeleaf exception 
+springboot mybatis  freemark thymeleaf exception  redis aop 

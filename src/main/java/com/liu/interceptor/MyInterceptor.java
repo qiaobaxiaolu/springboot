@@ -10,33 +10,34 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- *@Project Name:springboot 
+ * @Project Name:springboot
  * @author 刘佳瑞
  * @Package Name:interceptor
  * @date 2018年3月18日下午1:49:18
  */
 @Configuration
-public class MyInterceptor extends WebMvcConfigurerAdapter{
+public class MyInterceptor extends WebMvcConfigurerAdapter {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		HandlerInterceptor myInterceptor=new HandlerInterceptor() {
-			
+		HandlerInterceptor myInterceptor = new HandlerInterceptor() {
+
 			@Override
-			public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+			public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+					throws Exception {
 				System.out.println("拦截器...");
-				
+
 				return true;
 			}
-			
+
 			@Override
 			public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 					ModelAndView modelAndView) throws Exception {
-				
+
 			}
-			
+
 			@Override
-			public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-					throws Exception {
+			public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
+					Exception ex) throws Exception {
 			}
 		};
 		registry.addInterceptor(myInterceptor).addPathPatterns("/*/**");

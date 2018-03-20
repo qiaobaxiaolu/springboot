@@ -11,8 +11,8 @@ import org.springframework.context.annotation.PropertySource;
  * @date 2018年3月14日下午11:02:25
  */
 @Configuration
-@ConfigurationProperties(prefix="com.liu")
-@PropertySource(value="classpath:resource.properties")
+@ConfigurationProperties(prefix = "com.liu")
+@PropertySource(value = "classpath:resource.properties")
 public class Me {
 	private String name;
 	private String password;

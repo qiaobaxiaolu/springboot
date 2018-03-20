@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.liu.pojo.Me;
 
 /**
- *@Project Name:springboot 
+ * @Project Name:springboot
  * @author 刘佳瑞
  * @Package Name:com.liu.controller
  * @date 2018年3月14日下午11:37:28
@@ -25,16 +25,18 @@ import com.liu.pojo.Me;
 public class FTLController {
 	@Autowired
 	private Me me;
+
 	@RequestMapping("/index")
-	public String index(ModelMap model){
+	public String index(ModelMap model) {
 		model.addAttribute("me", me);
 		return "freemark/index";
 	}
+
 	@RequestMapping("/center")
-	public String center(Model model){
+	public String center(Model model) {
 		model.addAttribute("me", me);
 		return "/freemark/center/center";
-		
+
 	}
-	
+
 }

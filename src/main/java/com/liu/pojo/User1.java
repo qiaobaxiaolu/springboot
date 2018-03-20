@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
- *@Project Name:springboot 
+ * @Project Name:springboot
  * @author 刘佳瑞
  * @Package Name:com.liu.pojo
  * @date 2018年3月14日下午10:33:43
@@ -19,7 +19,7 @@ public class User1 {
 	private int age;
 	@JsonIgnore
 	private String password;
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date birthday;
 	@JsonInclude(Include.NON_NULL)
 	private String desc;
