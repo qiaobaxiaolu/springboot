@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 // 开启异步任务
 @EnableAsync
 // 开启定时任务
-//@EnableScheduling
+@EnableScheduling
 public class ExampleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ExampleApplication.class, args);
