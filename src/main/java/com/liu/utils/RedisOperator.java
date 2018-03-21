@@ -10,6 +10,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+
 /**
  * 
  * @Title: RedisOperator.java
@@ -29,7 +32,6 @@ public class RedisOperator {
 	
 	@Autowired
 	private StringRedisTemplate redisTemplate;
-	
 	// Key（键），简单的key-value操作
 
 	/**
