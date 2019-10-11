@@ -1,20 +1,17 @@
 package com.liu.redis;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.liu.pojo.User;
+import com.liu.utils.JsonUtils;
+import com.liu.utils.LiuResult;
+import com.liu.utils.RedisOperator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.io.JsonStringEncoder;
-import com.liu.pojo.User;
-import com.liu.utils.JsonUtils;
-import com.liu.utils.LiuResult;
-import com.liu.utils.RedisOperator;
+import java.util.ArrayList;
+import java.util.List;
 
-import redis.clients.jedis.Jedis;
 
 /**
  *@Project Name:springboot 
@@ -44,6 +41,7 @@ public class RedisController {
 	
 	@RequestMapping("/test1")
 	public LiuResult test1(){
+
 		User user=new User();
 		user.setuLoginName("liu");
 		User user1=new User();
