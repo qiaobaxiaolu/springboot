@@ -41,7 +41,6 @@ public class RedisController {
 	
 	@RequestMapping("/test1")
 	public LiuResult test1(){
-
 		User user=new User();
 		user.setuLoginName("liu");
 		User user1=new User();
